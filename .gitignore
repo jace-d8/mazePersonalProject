@@ -1,0 +1,9 @@
+# ignore a directory
+__pycache__/
+.idea/
+
+# ignore a file 
+.DS_Store
+
+# ignore a file type example: ignore all html files
+*.html

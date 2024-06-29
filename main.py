@@ -4,6 +4,34 @@ import maze as m
 import constants as c
 from sys import exit
 
+"""
+Overall great project! I'm impressed with the animation and path finding, good touches!
+I also appreciate the comments and the code really wasn't that hard to follow. I do have
+a few comments about the structure and some suggestions for best practices.
+
+Comments:
+1. Global variables should be avoided and as application size grows the harder it will be to manage
+   global variables. An alternative solution would be make an App class for instance and putting all
+   the global variables inside there. but for a smaller application the global variables are fine
+2. Some of the constants you define are constants. For example the SCREEN constant is actually an 
+   object and since that object has methods you are able to change the underlying data, this means
+   that SCREEN isn't a constant because the data can be manipulated by method calls
+3. This is something small but is a best practice when working with python. You should define a main
+   function. See below on how to do this.
+
+other comments about git:
+1. you shouldn't commit non essential files. Examples of these are the .idea/, __pycache__, and .DS_Store 
+   files/directories. The .idea folder is for editor configuration so it is non essential for a working application.
+   The __pycache__ folder is the bytecode of your application and is non essential because the python compiler can 
+   recreate the bytecode based on the source code. So you should create a .gitignore file to tell git not to commit these files
+2. When developers clone your git repo they expect the main branch to have a working version of the application.
+   When working on a new feature create a branch for it and once it is complete you can merge the branch back into main.
+   This is just a best practice so that you know you always have a working version of your code
+   
+I created my own version of this project, if you want to go over my code let me know
+check it out at this url: https://github.com/sydney22john/maze_generation
+"""
+
 pygame.init()
 sys.setrecursionlimit(20000)
 pygame.display.set_caption("Maze Generator")
@@ -71,3 +99,15 @@ while True:
 # Brainstorm: in the event a check is marked I toggle the boolean
 # if gen i pressed i gen
  # how to structure this: if mouse collides with button and clicks
+
+"""
+This is how you can make main functions in python
+
+def main():
+    ... your code here 
+
+
+if __name__ == "__main__":
+    main()
+"""
+         
